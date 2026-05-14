@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+}
+
+.card-info {
+  padding: 10px 5px 0;
+  word-wrap: break-word;
+}
+
+/* Default page background for non-home pages */
+body {
+  min-height: 100vh;
+  background: #efefef;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Home page overrides (index.html) */
+body.home {
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Materi page overrides */
+body.materi {
+  background: #ffffff;
+  color: #000;
+}
+
+/* ================= BACKGROUND ================= */
+.wave {
+  position: absolute;
+  border-radius: 100% 100% 0 0;
+  z-index: 1;
+}
+
+/* kiri paling belakang */
+.wave1 {
+  width: 900px;
+  height: 420px;
+  background: #b7d5ec;
+  left: -250px;
+  bottom: -120px;
+  transform: rotate(8deg);
+}
+
+/* kiri tengah */
+.wave2 {
+  width: 1000px;
+  height: 360px;
+  background: #7fb7e3;
+  left: -220px;
+  bottom: -180px;
+  transform: rotate(6deg);
+}
+
+/* kiri depan */
+.wave3 {
+  width: 950px;
+  height: 280px;
+  background: #5ea4dc;
+  left: -120px;
+  bottom: -170px;
+  transform: rotate(8deg);
+}
+
+/* kanan belakang */
+.wave4 {
+  width: 900px;
+  height: 420px;
+  background: #a9cce8;
+  right: -240px;
+  bottom: -120px;
+  transform: rotate(-8deg);
+}
+
+/* kanan depan */
+.wave5 {
+  width: 1000px;
+  height: 320px;
+  background: #6baee4;
+  right: -180px;
+  bottom: -190px;
+  transform: rotate(-7deg);
+}
+
+body.home {
+  background: #efefef;
+  overflow: hidden;
+  position: relative;
+}
+
+body.home footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 10;
+}
+
+header,
+.container {
+  position: relative;
+  z-index: 5;
+}
+
+.container {
+  position: relative;
+  z-index: 5;
+}
+
+/* ================= HEADER ================= */
+header {
+  width: 100%;
+  height: 90px;
+  background: #243bb8 url("../assets/navbar.png") center center / cover no-repeat;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 80px;
+
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+header::before { content: none; }
+
+.logo { color: white; font-size: 32px; font-weight: 900; position: relative; z-index: 2; }
+.back { color: white; text-decoration: none; margin-right: 10px; }
+
+nav { display: flex; gap: 30px; position: relative; z-index: 2; }
+nav a { text-decoration: none; color: white; font-size: 18px; font-weight: 600; padding: 8px 14px; border-radius: 20px; transition: 0.3s; }
+nav a:hover { background: rgba(255,255,255,0.15); }
+.active { background: rgba(255,255,255,0.2); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+
+/* ================= CONTENT ================= */
+.container { width: 100%; height: calc(100vh - 95px); display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative; z-index: 5; }
+
+.container h1 { font-size: 56px; font-weight: 900; color: black; margin-bottom: 40px; }
+
+.btn { padding: 18px 34px; border: none; border-radius: 10px; background: #243bb8; color: white; font-size: 20px; cursor: pointer; box-shadow: 0 8px 18px rgba(0,0,0,0.25); transition: 0.3s; }
+.left button { padding: 22px 38px; border-radius: 14px; font-size: 22px; box-shadow: 0 14px 30px rgba(0,0,0,0.18); }
+.left button:hover { transform: translateY(-4px); box-shadow: 0 20px 36px rgba(0,0,0,0.2); }
+
+/* ================= FOOTER ================= */
+footer { width: 85%; margin: 0 auto 25px; position: relative; z-index: 10; }
+.line { width: 100%; height: 2px; background: #444; margin-bottom: 12px; }
+footer p { text-align: right; font-size: 18px; color: black; }
+
+body.home footer { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); margin: 0; }
+
+body.home .container {
+  padding-top: 12px;
+}
+
+/* ================= PAGE-SPECIFIC COMPONENTS ================= */
+/* Judul page (anggota) */
+.judul { padding: 50px 40px 20px; }
+.judul h1 { font-size: 32px; font-weight: 900; }
+
+/* Mentor / anggota cards */
+.mentor-section { width: 100%; display:flex; justify-content:center; margin-top:20px; margin-bottom:50px; }
+.mentor-card { width:430px; background:#dddddd; padding:40px; border-radius:15px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+.foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #e6e6e6;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.foto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mentor-card h2, .card h2 { font-size: 18px; }
+.mentor-card p, .card p { font-size: 18px; color: #444; }
+.mentor-card span, .card span { font-size: 18px; color: #333; }
+
+.anggota-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px 60px;
+  flex-wrap: wrap;
+}
+.anggota-container .kolom {
+  width: 100%;
+  max-width: 420px;
+  background: #dddddd;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.anggota-container .card { text-align:center; margin-bottom:60px; }
+.anggota-container .card:last-child { margin-bottom:0; }
+
+/* Hero / materi page */
+.hero { width:100%; min-height:auto; display:flex; justify-content:space-between; align-items:center; padding:40px 80px 30px; }
+.left { width:58%; }
+.left h1 { font-size:38px; font-weight:900; line-height:1.05; margin-bottom:24px; }
+.left p { width:90%; font-size:18px; line-height:1.6; margin-bottom:30px; }
+.right { width:42%; display:flex; justify-content:center; align-items:center; }
+.right img { width:340px; filter: drop-shadow(0 10px 14px rgba(0,0,0,0.25)); }
+
+/* List materi */
+.materi-container { width:100%; display:flex; justify-content:center; gap:100px; padding:45px 80px; }
+.materi-container .kolom { display:flex; flex-direction:column; gap:45px; }
+.materi-container .card { width:560px; height:125px; background:#243bb8; color:white; border-radius:14px; display:flex; justify-content:center; align-items:center; text-align:center; font-size:28px; font-weight:500; }
+
+/* ================= RESPONSIVE (original baseline) ================= */
+@media (max-width: 1300px) {
+  .materi-container { flex-direction: column; align-items: center; gap: 45px; }
+}
+
+@media (max-width: 1100px) {
+  .hero { flex-direction: column; text-align: center; padding-top: 50px; }
+  .left { width:100%; }
+  .left p { width:100%; }
+  .right { width:100%; margin-top:40px; }
+  .right img { width:300px; }
+  .left h1 { font-size:34px; }
+  .left p { font-size:18px; }
+}
+
+@media (max-width: 900px) {
+  header { padding: 0 30px; }
+  .logo { font-size: 22px; }
+  nav { gap: 20px; }
+  nav a { font-size: 14px; }
+  .container h1 { font-size: 38px; }
+  .judul h1 { font-size: 22px; }
+  footer p { font-size: 14px; }
+}
+
+@media (max-width: 700px) {
+  header { padding: 0 20px; }
+  .logo { font-size: 18px; }
+  nav { gap: 10px; }
+  nav a { font-size: 12px; }
+  .hero {
+    padding: 24px 15px 18px;
+  }
+  .right {
+    margin-top: 18px;
+  }
+  .right img {
+    width: 240px;
+    transform: translateX(-8px);
+  }
+  /* KHUSUS CARD MATERI */
+  .materi-container .card {
+    width: 90vw;
+    height: 110px;
+    font-size: 18px;
+  }
+
+  .list-materi .header-left {
+    gap: 10px;
+  }
+
+  .materi .header-left {
+    gap: 10px;
+  }
+
+  .list-materi .back {
+    font-size: 30px;
+  }
+
+  .materi .back {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  header { height: 75px; padding: 0 15px; }
+  .logo { font-size: 14px; }
+  nav a { font-size: 10px; }
+  .hero {
+    padding: 18px 12px 12px;
+  }
+  .right {
+    margin-top: 12px;
+  }
+  .right img {
+    width: 200px;
+    transform: translateX(-8px);
+  }
+  .judul { padding: 20px 15px 10px; }
+  .judul h1 { font-size: 16px; }
+  .anggota-container .kolom { width: 95vw; padding: 20px; }
+  .mentor-card { width: 95vw; padding: 20px; }
+  .foto { height: 150px; margin-bottom: 10px; }
+  .mentor-card h2, .card h2 { font-size: 14px; margin-bottom: 5px; }
+  .mentor-card p, .card p { font-size: 12px; }
+  .mentor-card span, .card span { font-size: 12px; }
+  .anggota-container .card { margin-bottom: 30px; }
+  .left h1 { font-size: 22px; }
+  .left p { font-size: 12px; }
+  .list-materi .back { font-size: 24px; }
+  .materi .back { font-size: 24px; }
+}
+
+@media (max-width: 900px) {
+  .anggota-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .anggota-container .kolom {
+    width: 95%;
+    max-width: 500px;
+    padding: 25px;
+  }
+
+  .foto {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .foto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .anggota-container .card {
+    margin-bottom: 40px;
+  }
+}
